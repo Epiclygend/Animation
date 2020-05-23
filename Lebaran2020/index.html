@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/Compiled/styles.min.css">
+    <title>Idul Fitri 1441H</title>
+</head>
+
+<body class="flex">
+
+    <h1 class="main-text glow-fx">Selamat Hari Raya Idul Fitri 1441H</h1>
+    <h2 class="sub-main">Taqoballohu Minna Wa Minkum</h2>
+    <h2 class="sub-main">Minal Aidzin Wal Faidzin</h2>
+    <h2 class="sub-main">Mohon maaf Lahir dan Batin</h2>
+
+    <div class="by">
+        <span>from: </span><span>Someone</span>
+    </div>
+
+</body>
+<script src="../anime/lib/anime.min.js"></script>
+<script>
+
+    let timeline = anime.timeline({
+        autoplay: 1
+    })
+    .add({
+        targets: '.main-text',
+        wordSpacing: ['-2em', '.3em'],
+        duration: 5000,
+    })
+    .add({
+        targets: '.glow-fx',
+        keyframes: [
+            {
+                filter: 'blur(0em)',
+                textShadow: [
+                    '0 0 0 rgb(255, 255, 255), 0 0 0 rgb(255, 255, 255), 0 0 0 rgb(0, 255, 255), 0 0 0 rgb(255, 255, 255)',
+                    '0 0 0.2em rgb(32, 32, 204), 0 0 0.4em rgb(102, 102, 255), 0 0 0.5em rgb(0, 255, 255), 0 0 2em rgb(0, 255, 255)'
+                ],
+                color: ['rgba(255, 255, 255, 0)', 'rgba(255, 255, 255, 255)'],
+                duration: 3000
+            },
+            {
+                textShadow: '0 0 0.2em rgb(32, 32, 204), 0 0 0.4em rgb(102, 102, 255), 0 0 0.5em rgb(0, 255, 255), 0 0 .2em rgb(0, 255, 255)',
+                color: 'rgba(255, 255, 255, 0)',
+                duration: 3000,
+                easing: 'easeInSine'
+            },
+            {
+                textShadow: '0 0 0.2em rgb(32, 32, 204), 0 0 0.4em rgb(102, 102, 255), 0 0 0.5em rgb(0, 255, 255), 0 0 2em rgb(0, 255, 255)',
+                color: 'rgba(255, 255, 255, 255)',
+                duration: 3000,
+                easing: 'easeInSine'
+            },
+            {
+                filter: 'blur(1em)',
+                duration: 3000,
+                easing: 'easeInSine'
+            }
+        ]
+    }, '-= 3000')
+    .add({
+        targets: '.sub-main',
+        translateY: '-1em',
+        keyframes: [
+            {
+                opacity: [0,1],
+                filter: ['blur(1em)', 'blur(.8em)'],
+            },
+            {
+                filter: 'blur(0em)',
+                scale: 2,
+                translateY: anime.stagger('-1em'),
+                duration: 5000
+            },
+            {
+                scale: 0,
+                duration: 500
+            }
+        ],
+        delay: anime.stagger(5000)
+    }, '-= 3000')
+    .add({
+        targets: '.glow-fx',
+        filter: 'blur(0em)',
+        duration: 3000,
+        easing: 'easeInSine',
+        textShadow: '0 0 0 rgb(32, 32, 204), 0 0 0 rgb(102, 102, 255), 0 0 0 rgb(0, 255, 255), 0 0 0 rgb(0, 255, 255)',
+    }, '-= 3000')
+    .add({
+        targets: '.sub-main',
+        scale: 1,
+        delay: anime.stagger(2000),
+        translateY: '0em'
+    })
+    .add({
+        targets: '.by',
+        opacity: [0,1],
+        translateX: '40vw'
+    })
+
+    anime.speed = 2
+
+</script>
+
+</html>
